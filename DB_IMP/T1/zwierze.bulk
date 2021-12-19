@@ -1,0 +1,266 @@
+1,M,3,1,Wilk
+2,M,9,1,Wilk
+3,K,1,2,Alpaka
+4,M,6,3,Bongo
+5,M,3,4,Foka szara
+6,M,7,5,Gepard
+7,M,4,9,Gepard
+8,K,2,13,Gepard
+9,M,10,17,Gepard
+10,K,3,6,Jak
+11,K,1,11,Jak
+12,M,5,7,Jaguar
+13,K,4,13,Jaguar
+14,K,2,19,Jaguar
+15,K,8,25,Jaguar
+16,M,4,8,Kangur rudy
+17,K,2,15,Kangur rudy
+18,K,5,22,Kangur rudy
+19,K,7,29,Kangur rudy
+20,K,8,9,Kob nilowy
+21,K,7,17,Kob nilowy
+22,M,10,25,Kob nilowy
+23,M,1,33,Kob nilowy
+24,M,5,10,Kot argentynski
+25,M,2,19,Kot argentynski
+26,M,5,11,Lama
+27,K,6,21,Lama
+28,K,5,12,Lemur
+29,M,10,23,Lemur
+30,K,5,34,Lemur
+31,M,7,13,Lew
+32,M,6,14,Leniwiec
+33,K,8,27,Leniwiec
+34,K,6,40,Leniwiec
+35,M,1,53,Leniwiec
+36,K,10,15,Manul
+37,M,8,29,Manul
+38,M,8,16,Niedzwiedz polarny
+39,M,9,31,Niedzwiedz polarny
+40,M,2,17,Osiol somalijski
+41,M,10,33,Osiol somalijski
+42,M,1,49,Osiol somalijski
+43,M,9,18,Owca
+44,M,1,19,Panda mala
+45,M,3,20,Pigmejka
+46,K,9,21,Pizmowol
+47,K,3,41,Pizmowol
+48,M,9,22,Serwal
+49,K,3,43,Serwal
+50,M,4,64,Serwal
+51,M,10,15,Serwal
+52,K,7,23,swinka morska
+53,K,6,24,Wikunia
+54,M,5,47,Wikunia
+55,M,6,25,Wielblad
+56,K,1,49,Wielblad
+57,K,7,3,Wielblad
+58,K,10,27,Wielblad
+59,M,1,26,zubr
+60,K,3,27,zyrafa
+61,M,8,53,zyrafa
+62,M,1,9,zyrafa
+63,K,8,28,Amazonetka
+64,M,10,55,Amazonetka
+65,M,3,12,Amazonetka
+66,K,1,39,Amazonetka
+67,K,10,29,Ara hiacyntowa
+68,M,3,57,Ara hiacyntowa
+69,M,5,15,Ara hiacyntowa
+70,M,8,30,Ara zielona
+71,K,2,59,Ara zielona
+72,K,10,18,Ara zielona
+73,K,9,31,Ara zoltoszyja
+74,M,6,61,Ara zoltoszyja
+75,M,1,32,Arara
+76,M,10,33,Batalion
+77,K,1,65,Batalion
+78,K,1,27,Batalion
+79,K,2,59,Batalion
+80,M,3,34,Bazant himalajski
+81,K,7,67,Bazant himalajski
+82,M,8,35,Bazant srebrzysty
+83,K,10,36,Bilbil arabski
+84,M,3,37,Bocian czarny
+85,M,3,3,Bocian czarny
+86,M,1,38,Cieciornik
+87,K,5,5,Cieciornik
+88,M,10,39,Cyraneczka
+89,M,10,7,Cyraneczka
+90,K,9,40,Cudokaczka
+91,K,1,9,Cudokaczka
+92,K,2,41,Czapla zlotawa
+93,K,1,11,Czapla zlotawa
+94,K,2,42,Czernica
+95,K,5,43,Dziwonos
+96,K,2,15,Dziwonos
+97,M,6,44,Gil
+98,K,3,17,Gil
+99,M,4,60,Gil
+100,M,5,33,Gil
+101,M,5,45,Emu
+102,M,7,19,Emu
+103,K,5,46,Ges sniezna
+104,K,9,47,Glowienka
+105,M,5,23,Glowienka
+106,K,2,69,Glowienka
+107,M,5,45,Glowienka
+108,K,3,48,Golab
+109,M,1,25,Golab
+110,K,4,49,Helmiatka
+111,K,6,27,Helmiatka
+112,K,4,50,Jarzabek
+113,M,8,29,Jarzabek
+114,M,10,8,Jarzabek
+115,M,9,57,Jarzabek
+116,K,7,51,Kakadu rozowa
+117,M,1,31,Kakadu rozowa
+118,M,8,11,Kakadu rozowa
+119,M,10,52,Kanarek
+120,M,10,33,Kanarek
+121,M,2,14,Kanarek
+122,K,7,53,Kraska
+123,M,5,35,Kraska
+124,K,6,17,Kraska
+125,M,6,54,Lerka
+126,M,7,55,Ohar
+127,M,2,39,Ohar
+128,K,2,23,Ohar
+129,M,1,56,Orzel stepowy
+130,M,10,41,Orzel stepowy
+131,M,7,57,Puchacz
+132,K,9,43,Puchacz
+133,M,10,58,Rybolow
+134,K,3,45,Rybolow
+135,M,4,32,Rybolow
+136,M,6,19,Rybolow
+137,M,7,59,Slodnik
+138,K,5,47,Slodnik
+139,K,8,35,Slodnik
+140,K,2,60,Szpak
+141,K,5,61,Tukan toko
+142,K,4,51,Tukan toko
+143,M,2,41,Tukan toko
+144,M,10,62,Wilga
+145,M,10,53,Wilga
+146,M,5,44,Wilga
+147,K,7,35,Wilga
+148,M,8,63,Agama blotna
+149,K,3,64,Boa dusiciel
+150,M,5,57,Boa dusiciel
+151,M,6,50,Boa dusiciel
+152,M,1,65,Boa kubanski
+153,K,7,59,Boa kubanski
+154,K,5,53,Boa kubanski
+155,K,9,66,Gekon
+156,K,5,61,Gekon
+157,M,10,67,Hardun
+158,M,5,63,Hardun
+159,K,10,59,Hardun
+160,K,9,68,Jaszczurka krokodylowa
+161,M,8,65,Jaszczurka krokodylowa
+162,K,2,69,Kameleon lamparci
+163,K,5,67,Kameleon lamparci
+164,K,1,65,Kameleon lamparci
+165,M,6,63,Kameleon lamparci
+166,K,4,70,Krokodyl kubanski
+167,M,2,1,Legwanik lazurowy
+168,K,5,1,Legwanik lazurowy
+169,M,4,1,Legwanik lazurowy
+170,K,9,2,Pyton rombowy
+171,M,5,3,Pyton rombowy
+172,M,6,4,Pyton rombowy
+173,K,4,3,Teju zloty
+174,M,6,5,Teju zloty
+175,K,4,4,Waran mangrowy
+176,M,8,7,Waran mangrowy
+177,M,7,5,Zaskroniec byczy
+178,K,1,6,zolw blotny
+179,K,3,11,zolw blotny
+180,M,9,7,zolw grecki
+181,M,1,13,zolw grecki
+182,M,10,8,Aksolotl meksykanski
+183,M,8,15,Aksolotl meksykanski
+184,K,1,22,Aksolotl meksykanski
+185,M,10,9,Drzewolaz plamisty
+186,M,2,17,Drzewolaz plamisty
+187,M,7,25,Drzewolaz plamisty
+188,M,6,10,Rzekotka zabia
+189,K,8,19,Rzekotka zabia
+190,M,3,11,Akara
+191,K,6,21,Akara
+192,M,8,31,Akara
+193,M,1,41,Akara
+194,M,7,12,Antias
+195,M,1,13,Argus wielopregi
+196,K,2,25,Argus wielopregi
+197,K,10,14,Bystrzyk czerwony
+198,M,9,27,Bystrzyk czerwony
+199,K,6,15,Bystrzyk krwisty
+200,M,6,29,Bystrzyk krwisty
+201,M,2,16,Gupik
+202,K,8,31,Gupik
+203,M,6,46,Gupik
+204,K,8,61,Gupik
+205,K,10,17,Korys
+206,K,4,33,Korys
+207,K,5,49,Korys
+208,M,6,65,Korys
+209,M,7,18,Pstrag teczowy
+210,K,1,35,Pstrag teczowy
+211,M,1,52,Pstrag teczowy
+212,M,10,19,losos szlachetny
+213,M,8,37,losos szlachetny
+214,M,7,55,losos szlachetny
+215,M,6,20,Mieczyk Hellera
+216,M,10,39,Mieczyk Hellera
+217,M,3,21,Motylek
+218,M,2,41,Motylek
+219,K,10,22,Pensetnik
+220,M,7,23,Zbrojnik
+221,M,3,45,Zbrojnik
+222,M,2,67,Zbrojnik
+223,K,7,19,Zbrojnik
+224,M,7,24,Zwinnik jarzeniec
+225,M,5,47,Zwinnik jarzeniec
+226,M,8,70,Zwinnik jarzeniec
+227,K,7,23,Zwinnik jarzeniec
+228,M,5,25,Fawia
+229,K,5,49,Fawia
+230,M,2,3,Fawia
+231,M,6,27,Fawia
+232,K,6,26,Igielnik
+233,K,10,27,Karaczan
+234,M,8,53,Karaczan
+235,K,3,9,Karaczan
+236,K,3,28,Koralowiec
+237,K,8,55,Koralowiec
+238,K,8,12,Koralowiec
+239,K,1,39,Koralowiec
+240,K,8,29,Kran czerwonoreki
+241,K,4,57,Kran czerwonoreki
+242,K,7,15,Kran czerwonoreki
+243,M,2,43,Kran czerwonoreki
+244,M,6,30,Ksenia pulsujaca
+245,M,9,59,Ksenia pulsujaca
+246,M,10,18,Ksenia pulsujaca
+247,K,3,47,Ksenia pulsujaca
+248,K,4,31,Neftea
+249,K,4,61,Neftea
+250,K,1,32,Patyczak
+251,K,7,33,Ptasznik
+252,M,6,65,Ptasznik
+253,M,5,34,Skorpion
+254,K,7,67,Skorpion
+255,M,10,30,Skorpion
+256,K,8,35,slimak olbrzymi
+257,K,9,69,slimak olbrzymi
+258,K,1,33,slimak olbrzymi
+259,K,7,67,slimak olbrzymi
+260,M,4,36,Ukwial czerwony
+261,K,9,1,Ukwial czerwony
+262,K,1,36,Ukwial czerwony
+263,M,6,1,Ukwial czerwony
+264,K,6,37,Wij czerwononogi
+265,M,8,3,Wij czerwononogi
+266,M,8,39,Wij czerwononogi
