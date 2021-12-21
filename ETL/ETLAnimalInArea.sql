@@ -44,11 +44,9 @@ MERGE INTO AnimalInArea as DST
 						  SRC.ID
 					)
 
-
 			;
 go
+
 SELECT * FROM AnimalInArea
-
-
 
 

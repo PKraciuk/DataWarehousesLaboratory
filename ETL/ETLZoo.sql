@@ -22,9 +22,6 @@ MERGE INTO Zoo as DST
 					SRC.Country,
 					SRC.City
 					)
-			WHEN Not Matched By Source
-				Then
-					DELETE
 			;
 
 DROP View vETLDimZooData

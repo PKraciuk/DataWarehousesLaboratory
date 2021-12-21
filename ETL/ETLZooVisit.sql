@@ -1,7 +1,5 @@
 ﻿USE HD
 
-
-
 If (object_id('WeathersTemp') is not null) Drop Table WeathersTemp;
 CREATE TABLE dbo.WeathersTemp(ID_Zoo INT FOREIGN KEY REFERENCES Zoo(ID_Zoo), date DATE, temp INT, WasRaining varchar(3));
 go
@@ -105,8 +103,7 @@ FROM
 	) AS X
 GO
 
-DELETE FROM ZooVisit;
-DBCC CHECKIDENT ('ZooVisit', RESEED, 0);
+
 
 
 MERGE INTO ZooVisit as DST

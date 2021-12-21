@@ -14,6 +14,7 @@ go
 
 Declare @EntryDate datetime; 
 SELECT @EntryDate = GETDATE();
+
 MERGE INTO Animal as DST
 	USING vETLAnimal as SRC
 		ON DST.ID_Animal = SRC.ID_Animal
@@ -34,10 +35,10 @@ MERGE INTO Animal as DST
 				DST.ExpiryDate = @EntryDate
 			;
 
-
 GO
 Declare @EntryDate datetime; 
 SELECT @EntryDate = GETDATE();
+
 INSERT INTO Animal(
 	ID_Animal,
 	Age,

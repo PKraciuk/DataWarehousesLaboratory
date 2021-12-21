@@ -18,7 +18,6 @@ go
 MERGE INTO Enclosure as DST
 	USING vETLDimEnclosureData as SRC
 		ON DST.ID_Enclosure = SRC.ID_Enclosure
-		AND DST.SizeCategory = SRC.Size
 			WHEN NOT Matched
 				THEN
 					INSERT
@@ -27,6 +26,6 @@ MERGE INTO Enclosure as DST
 					)
 ;
 
-
+SELECT * FROM Enclosure
 
 
