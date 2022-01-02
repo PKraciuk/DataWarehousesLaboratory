@@ -22,6 +22,7 @@ While @DateInProcess <= @EndDate
 		( [dateUQ],
 		  [Day],
 		  [Month],
+		  [MonthNo],
 		  [Year],
 		  [DayOfWeek],
 		  [IfWeekend],
@@ -30,6 +31,7 @@ While @DateInProcess <= @EndDate
 		Values ( 
 		  @DateInProcess -- [Date]
 		  , Cast (Day(@DateInProcess) as varchar(2))
+		  , Cast( DATENAME(month, @DateInProcess) as varchar(10)) -- [Month]
 		  , Cast( Month(@DateInProcess) as int) -- [MonthNo]
 		  , Cast( Year(@DateInProcess) as varchar(4)) -- [Year]
 		  , Cast( DATEPART(dw, @DateInProcess) as int) -- [DayOfWeekNo]

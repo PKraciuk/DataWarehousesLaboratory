@@ -21,8 +21,9 @@ CREATE TABLE Zoo (
 CREATE TABLE Date (
 	ID_Date INT PRIMARY KEY IDENTITY,
 	dateUQ date unique,
-	Day INT, 
-	Month INT,
+	Day INT,
+	Month VARCHAR(10),
+	MonthNo INT,
 	Year INT,
 	DayOfWeek INT,
 	IfWeekend VARCHAR(1),

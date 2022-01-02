@@ -1,0 +1,123 @@
+-- ZAPYTANIE 1 -- 
+  --Porównaj odwiedziny konkretnych stref w porównaniu z poprzednim miesi¹cem --
+SELECT 
+{ [Measures].[Zoo Visit Count] } ON COLUMNS,
+{ ([Date].[2020].[JANUARY],
+   [Area].[ID Area].children),
+   ( [Date].[2020].[JANUARY].NEXTMEMBER,
+   [Area].[ID Area].children)
+} ON ROWS
+FROM [HD];
+
+-- ZAPYTANIE 2 --
+-- Porównaj odsetek iloœci klientów kupuj¹cych bilety ulgowe w tym a poprzednim miesi¹cu.--
+WITH MEMBER [Percentage of Discounted] AS ' ([Junk].[Reduced Ticket].&[1], [Measures].[Zoo Visit Count]) / [Measures].[Zoo Visit Count]',
+format_string = '##%'
+SELECT 
+{ [Percentage of Discounted] } ON COLUMNS,
+{ [Date].[2020].[JANUARY],
+[Date].[2020].[JANUARY].NEXTMEMBER
+} ON ROWS
+FROM [HD]
+
+-- ZAPYTANIE 3 -- 
+-- Porównaj iloœæ zwierz¹t roœlino¿ernych pomiêdzy stref¹ pomiêdzy strefami z najwiêkszym wzrostem i najwiêkszym --
+-- spadkiem iloœci odwiedzin pomiêdzy obecnym, a poprzednim  miesi¹cem--
+
+WITH MEMBER [VISIT DIFF] AS ' ( [Date].[2020].[JANUARY].NEXTMEMBER, [Measures].[Area Visit Count]) - 
+([Date].[2020].[JANUARY], [Measures].[Area Visit Count] )'
+SELECT 
+{ [VISIT DIFF] ,[Measures].[Animal In Area Count]} ON COLUMNS,
+{ TOPCOUNT ( [Area].[ID Area].children , 1 , [VISIT DIFF] ),
+  BOTTOMCOUNT ( [Area].[ID Area].children , 1 , [VISIT DIFF] )
+} ON ROWS
+FROM [HD]
+WHERE [Species].[Diet].&[Roslinozerca];
+
+
+-- ZAPYTANIE 4 --
+ -- W których Zoo czêstotliwoœæ opadów by³a najwiêksza w tym i zesz³ym miesi¹cu? --
+SELECT 
+{ [Measures].[NumberOfVisitingDays] } ON COLUMNS,
+{ (
+   TOPCOUNT( ([Date].[2020].[JANUARY],
+   [Zoo].[ID Zoo].children),1,[Measures].[NumberOfVisitingDays]
+   )),
+   (
+   TOPCOUNT( ([Date].[2020].[JANUARY].NEXTMEMBER,
+   [Zoo].[ID Zoo].children),1,[Measures].[NumberOfVisitingDays]
+   ))
+} ON ROWS
+FROM [HD]
+WHERE  [Junk].[Was Raining].&[1];
+
+-- ZAPYTANIE 5 --
+WITH MEMBER [Visit Difference Zoo 1] AS ' ([Zoo].[ID Zoo].&[1], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
+                              ([Zoo].[ID Zoo].&[1], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
+MEMBER [Visit Difference Zoo 2] AS ' ([Zoo].[ID Zoo].&[2], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
+                              ([Zoo].[ID Zoo].&[2], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
+MEMBER [Visit Difference Zoo 3] AS ' ([Zoo].[ID Zoo].&[3], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
+                              ([Zoo].[ID Zoo].&[3], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
+SELECT 
+{ [Junk].[Temperature].members } ON COLUMNS,
+{ 
+[Visit Difference Zoo 1],
+[Visit Difference Zoo 2],
+[Visit Difference Zoo 3] 
+} ON ROWS
+FROM [HD];
+
+-- ZAPYTANIE 6 --
+-- O której porze dnia przychodzi najwiêcej klientów w weekend, a o której w dni robocze? --
+SELECT 
+{ [Measures].[Zoo Visit Count] } ON COLUMNS,
+{ 
+(TOPCOUNT( ([Date].[If Weekend].&[0],[Time].[Time Of The Day].children),1,[Measures].[Zoo Visit Count])),
+(TOPCOUNT( ([Date].[If Weekend].&[1],[Time].[Time Of The Day].children),1,[Measures].[Zoo Visit Count]))
+} ON ROWS
+FROM [HD];
+
+-- ZAPYTANIE 7 --
+--Porównaj œredni¹ liczbê klientów podczas opadów w dni robocze, a weekend --
+SELECT 
+{ [Measures].[AverageVisitsPerDay] } ON COLUMNS,
+{ 
+[Date].[If Weekend].&[0],
+[Date].[If Weekend].&[1]
+} ON ROWS
+FROM [HD]
+WHERE [Junk].[Was Raining].&[1];
+
+-- ZAPYTANIE 8 --
+--Jaki procent w dni ciep³e (powy¿ej 15 stopni) stanowi¹ bilety ulgowe w dni robocze, a jaki w weekend? --
+
+WITH MEMBER [PERCENTAGE OF DISCOUNT IN WARM DAYS] AS 
+' (  [Junk].[Temperature].&[Wysoka],[Junk].[Reduced Ticket].&[1], [Measures].[Zoo Visit Count]) /
+(  [Junk].[Temperature].&[Wysoka],[Measures].[Zoo Visit Count])'
+SELECT
+{ [PERCENTAGE OF DISCOUNT IN WARM DAYS] } ON COLUMNS,
+{
+[Date].[If Weekend].&[0],[Date].[If Weekend].&[1]
+} ON ROWS
+FROM [HD];
+
+-- ZAPYTANIE 9 --
+--Porównaj zmianê w iloœci klientów w œwiêta, jest to dzieñ roboczy lub weekend.--
+WITH MEMBER [VISIT DIFF ON WEEKEND]  AS '  ( [Date].[If Weekend].&[1] ,[Measures].[AverageVisitsPerDay] )
+                                        - ([Date].[If Weekend].&[0] ,[Measures].[AverageVisitsPerDay] )',
+										format_string = 'fixed'
+SELECT 
+{[VISIT DIFF ON WEEKEND] } ON COLUMNS,
+{ 
+ EXCEPT([Date].[If Holiday].children, {[Date].[If Holiday].[Unknown]})
+} ON ROWS
+FROM [HD];
+
+
+-- ZAPYTANIE 10 --
+--Porównaj œredni¹ liczebnoœæ grup odwiedzaj¹c¹ zoo w dzieñ roboczy i weekend.--
+SELECT 
+{ [Measures].[AvgGroupSize] } ON COLUMNS,
+{EXCEPT([Date].[If Holiday].children, {[Date].[If Holiday].[Unknown]})
+} ON ROWS
+FROM [HD]

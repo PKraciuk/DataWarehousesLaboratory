@@ -26,6 +26,6 @@ MERGE INTO Enclosure as DST
 					)
 ;
 
-SELECT * FROM Enclosure
+
 
 

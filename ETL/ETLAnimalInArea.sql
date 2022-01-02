@@ -1,6 +1,5 @@
 USE HD
-DBCC CHECKIDENT ('AnimalInArea', RESEED, 1);
-go
+
 If (object_id('vETLAnimalInArea') is not null) Drop View vETLAnimalInArea;
 
 go
@@ -28,6 +27,7 @@ JOIN Area AS ST3 ON ST3.ID_Area=ST2.ID_Area
 JOIN Animal AS ST5 ON (ST5.ID_Animal=ST1.ID_Animal AND ST5.isCurrent=1)
 WHERE ST5.isCurrent=1
 go
+
 MERGE INTO AnimalInArea as DST
 	USING vETLAnimalInArea as SRC
 		ON DST.ID_Enclosure = SRC.ID_Enclosure

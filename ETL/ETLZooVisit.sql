@@ -5,7 +5,7 @@ CREATE TABLE dbo.WeathersTemp(ID_Zoo INT FOREIGN KEY REFERENCES Zoo(ID_Zoo), dat
 go
 SET DATEFORMAT dmy ;
 BULK INSERT dbo.WeathersTemp
-    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\T1\excel\pogoda_zoo1.csv'
+    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\Excel\pogoda_zoo1.csv'
     WITH
     (
     FIELDTERMINATOR = ',',  --CSV field delimiter
@@ -14,7 +14,7 @@ BULK INSERT dbo.WeathersTemp
     )
 
 BULK INSERT dbo.WeathersTemp
-    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\T1\excel\pogoda_zoo2.csv'
+    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\Excel\pogoda_zoo2.csv'
     WITH
     (
     FIELDTERMINATOR = ',',  --CSV field delimiter
@@ -23,7 +23,7 @@ BULK INSERT dbo.WeathersTemp
     )
 
 BULK INSERT dbo.WeathersTemp
-    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\T1\excel\pogoda_zoo3.csv'
+    FROM 'C:\Users\user\Documents\HD-WH IMP\DB_IMP\Excel\pogoda_zoo3.csv'
     WITH
     (
     FIELDTERMINATOR = ',',  --CSV field delimiter
@@ -105,27 +105,25 @@ GO
 
 
 
-
 MERGE INTO ZooVisit as DST
 	USING vETLZooVisit as SRC
 		ON DST.ID_Ticket = SRC.ID_Ticket
-		AND DST.ID_Zoo = SRC.ID_Zoo
-		AND DST.ID_Data = SRC.ID_Date
-		AND DST.ID_Time = SRC.ID_Time
-		AND DST.ID_Junk = SRC.ID_Junk
-		AND DST.GroupSize= SRC.GrpSize
 		WHEN Not Matched
 				THEN
 					INSERT
-					Values (
+					Values (						  
 						  SRC.ID_Zoo,
 						  SRC.ID_Date,
 						  SRC.ID_Time,
 						  SRC.ID_Junk,
 						  SRC.GrpSize
 					)
-
+		WHEN Not Matched By Source
+				Then
+					DELETE
 			;
+
+			
 
 	
 
@@ -133,3 +131,7 @@ If (object_id('vETLZooVisit') is not null) Drop view vETLZooVisit;
 Drop View vETLDimTempData;
 Drop View vZooVisit;
 Drop Table WeathersTemp;
+/*
+DELETE FROM ZooVisit
+DBCC CHECKIDENT ('ZooVisit', RESEED, 0);
+*/
