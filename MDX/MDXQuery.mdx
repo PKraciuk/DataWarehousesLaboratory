@@ -52,18 +52,15 @@ FROM [HD]
 WHERE  [Junk].[Was Raining].&[1];
 
 -- ZAPYTANIE 5 --
-WITH MEMBER [Visit Difference Zoo 1] AS ' ([Zoo].[ID Zoo].&[1], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
-                              ([Zoo].[ID Zoo].&[1], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
-MEMBER [Visit Difference Zoo 2] AS ' ([Zoo].[ID Zoo].&[2], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
-                              ([Zoo].[ID Zoo].&[2], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
-MEMBER [Visit Difference Zoo 3] AS ' ([Zoo].[ID Zoo].&[3], [Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
-                              ([Zoo].[ID Zoo].&[3], [Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
+-- Zestaw zmianê iloœci klientów ka¿dego zoo w obecnym i poprzednim miesi¹cu z najczêstszym przedzia³em temperatury w--
+																								--ka¿dym z nich--
+WITH MEMBER [Visit Difference] AS ' ([Date].[Month].[JANUARY].NEXTMEMBER, [Measures].[Zoo Visit Count]) - 
+                              ([Date].[Month].[JANUARY], [Measures].[Zoo Visit Count])'
 SELECT 
-{ [Junk].[Temperature].members } ON COLUMNS,
+{ [Visit Difference]
+    } ON COLUMNS,
 { 
-[Visit Difference Zoo 1],
-[Visit Difference Zoo 2],
-[Visit Difference Zoo 3] 
+[Zoo].[ID Zoo].children
 } ON ROWS
 FROM [HD];
 
